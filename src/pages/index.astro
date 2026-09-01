@@ -1,11 +1,107 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const toastUrl = "#";
+const phoneNumber = "tel:+12102513127"; 
+const locationUrl = "https://www.google.com/maps/place/5328+S+Zarzamora+St,+San+Antonio,+TX+78211/@29.3735368,-98.5340375,17z/data=!4m16!1m9!3m8!1s0x865c59a97f9ce85d:0xcc325e55d056765f!2s5328+S+Zarzamora+St,+San+Antonio,+TX+78211!3b1!8m2!3d29.373569!4d-98.5337972!10e5!16s%2Fg%2F11bw3_h558!3m5!1s0x865c59a97f9ce85d:0xcc325e55d056765f!8m2!3d29.373569!4d-98.5337972!16s%2Fg%2F11bw3_h558?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!-- scroll-smooth enables gliding when clicking top nav links -->
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>210 Sushi Hut | San Antonio</title>
+	<meta name="description" content="210 Sushi Hut serves up a unique Japanese-Mexican sushi fusion in San Antonio, TX. Order online for fresh, family-owned flavor." />
+  </head>
+  <!-- Removed h-screen so the page can scroll infinitely -->
+  <body class="bg-[#F2EED0] text-[#0B0B0B] font-sans flex flex-col">
+    
+    <!-- FIXED TOP BAR (Black) -->
+    <header class="fixed top-0 left-0 w-full bg-[#0B0B0B] py-5 px-6 z-50 shadow-lg">
+      <nav class="max-w-4xl mx-auto flex justify-center items-center gap-6 sm:gap-12 group">
+        <a href={phoneNumber} class="text-[#F5D85C] uppercase tracking-widest text-xs sm:text-sm font-medium transition-all duration-300 group-hover:scale-75 group-hover:opacity-50 hover:!scale-110 hover:!opacity-100 hover:!text-white">Call</a>
+        <a href="#footer" class="text-[#F5D85C] uppercase tracking-widest text-xs sm:text-sm font-medium transition-all duration-300 group-hover:scale-75 group-hover:opacity-50 hover:!scale-110 hover:!opacity-100 hover:!text-white">Hours</a>
+        <a href="#about" class="text-[#F5D85C] uppercase tracking-widest text-xs sm:text-sm font-medium transition-all duration-300 group-hover:scale-75 group-hover:opacity-50 hover:!scale-110 hover:!opacity-100 hover:!text-white">About</a>
+        <a href={toastUrl} target="_blank" class="text-[#F5D85C] uppercase tracking-widest text-xs sm:text-sm font-medium transition-all duration-300 group-hover:scale-75 group-hover:opacity-50 hover:!scale-110 hover:!opacity-100 hover:!text-white">Menu & Order</a>
+      </nav>
+    </header>
+
+    <!-- SECTION 1: HERO (Beige) -->
+    <!-- min-h-screen ensures this takes up exactly 100% of the screen on load -->
+    <section class="min-h-screen flex flex-col items-center justify-center text-center px-4 w-full pt-20 bg-[#F2EED0]">
+      <img src="/logo.png" alt="210 Sushi Hut Logo" class="w-64 md:w-96 mb-8 object-contain" />
+      <p class="text-[#333333] text-xl md:text-3xl font-light tracking-[0.4em] lowercase mb-16">
+        san antonio
+      </p>
+      <a href={toastUrl} target="_blank" class="bg-[#C89C2E] hover:bg-[#F5D85C] text-[#0B0B0B] border border-[#0B0B0B] font-normal uppercase tracking-[0.2em] py-4 px-12 text-sm md:text-base transition-all duration-300 shadow-[4px_4px_0px_#0B0B0B] hover:shadow-[2px_2px_0px_#0B0B0B] hover:translate-y-[2px] hover:translate-x-[2px]">
+        Order Now
+      </a>
+    </section>
+
+    <!-- SECTION 2: ABOUT US (White) -->
+    <section id="about" class="bg-white py-24 px-6">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- Image Container -->
+        <!-- Added the Uchi-style drop shadow to the image block -->
+        <div class="w-full aspect-square bg-[#F2EED0] overflow-hidden border border-[#0B0B0B] shadow-[8px_8px_0px_#0B0B0B]">
+          <!-- TODO: Add a restaurant/food image to your public folder named about-image.jpg -->
+          <img src="/about-image.jpg" alt="Inside 210 Sushi Hut" class="w-full h-full object-cover" />
+        </div>
+        
+        <!-- Text Container -->
+        <div class="flex flex-col justify-center">
+          <h2 class="text-[#0B0B0B] text-3xl md:text-4xl font-light tracking-[0.2em] lowercase mb-6">
+            about us
+          </h2>
+          <p class="text-[#333333] leading-relaxed mb-4">
+             We are a family-owned business and have been in the sushi industry for over 15 years! Our passion for making delicious sushi inspired us to open our own restaurant, but with a twistz We specialize in Japanese-Mexican fusion.
+          </p>
+          <p class="text-[#333333] leading-relaxed">
+            Whether you are craving classic nigiri or our signature fusion rolls, everything is prepared fresh daily using the highest quality ingredients. Stop by or order delivery to see what makes our unique cultural blend the best in the west side.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: FOOTER / INFO (Black) -->
+    <footer id="footer" class="bg-[#0B0B0B] text-[#F2EED0] py-20 px-6 border-t-[4px] border-[#C89C2E]">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+        
+        <!-- Location -->
+        <div>
+          <h3 class="text-[#F5D85C] uppercase tracking-[0.2em] text-sm mb-4">Location</h3>
+          <p class="text-sm leading-relaxed text-[#F2EED0]/80">
+            5328 S. Zarzamora St<br />
+            San Antonio, TX 78211<br />
+            <a href={locationUrl} target="_blank" class="inline-block mt-2 text-[#C89C2E] hover:text-[#F5D85C] underline transition-colors">Get Directions</a>
+          </p>
+        </div>
+
+        <!-- Hours -->
+        <div>
+          <h3 class="text-[#F5D85C] uppercase tracking-[0.2em] text-sm mb-4">Hours</h3>
+          <ul class="text-sm leading-relaxed text-[#F2EED0]/80 space-y-2">
+            <li><span class="inline-block w-20">Mon-Thu:</span> null</li>
+            <li><span class="inline-block w-20">Fri-Sat:</span> null</li>
+            <li><span class="inline-block w-20">Sunday:</span>  null</li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h3 class="text-[#F5D85C] uppercase tracking-[0.2em] text-sm mb-4">Contact</h3>
+          <p class="text-sm leading-relaxed text-[#F2EED0]/80">
+            Ready to order or have a question?<br /><br />
+            <!--<a href={phoneNumber} class="text-xl text-[#F2EED0] hover:text-[#F5D85C] transition-colors">210-251-3127</a> -->
+			<!-- Corrected Phone Link -->
+<a href={phoneNumber} class="inline-block mt-2 text-[#C89C2E] hover:text-[#F5D85C] underline transition-colors">210-251-3127</a>
+
+          </p>
+        </div>
+
+      </div>
+    </footer>
+
+  </body>
+</html>
