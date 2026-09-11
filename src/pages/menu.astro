@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu | 210 Sushi Hut</title>
+  </head>
+  <body class="bg-[#F2EED0] text-[#0B0B0B] font-sans min-h-screen flex flex-col">
+    
+    <!-- Top Navigation -->
+    <header class="bg-[#0B0B0B] py-5 px-6 sticky top-0 z-50 shadow-lg">
+      <nav class="max-w-4xl mx-auto flex justify-between items-center">
+        <a href="/" class="text-[#F5D85C] uppercase tracking-widest text-xs sm:text-sm font-medium hover:text-white transition-colors">
+          &larr; Back to Home
+        </a>
+        <span class="text-[#F5D85C] uppercase tracking-widest text-xs sm:text-sm font-semibold">Menu</span>
+      </nav>
+    </header>
+
+    <!-- Menu Display -->
+    <main class="max-w-3xl mx-auto px-4 py-12 flex flex-col items-center gap-10">
+      <div class="text-center">
+        <h1 class="text-3xl md:text-4xl font-light tracking-[0.2em] lowercase mb-2">our menu</h1>
+        <p class="text-xs sm:text-sm text-[#555555]">Tap an image to open and zoom in full resolution.</p>
+      </div>
+
+      <!-- Menu Sheet 1 -->
+      <a href="/menu-1.jpg" target="_blank" class="w-full block border border-[#0B0B0B] shadow-[6px_6px_0px_#0B0B0B] bg-white transition hover:opacity-95">
+        <img src="/menu-1.jpg" alt="210 Sushi Hut Menu Page 1" class="w-full h-auto object-contain" />
+      </a>
+
+      <!-- Menu Sheet 2 -->
+      <a href="/menu-2.jpg" target="_blank" class="w-full block border border-[#0B0B0B] shadow-[6px_6px_0px_#0B0B0B] bg-white transition hover:opacity-95">
+        <img src="/menu-2.jpg" alt="210 Sushi Hut Menu Page 2" class="w-full h-auto object-contain" />
+      </a>
+    </main>
+
+  </body>
+</html>
