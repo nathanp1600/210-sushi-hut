@@ -1,42 +1,83 @@
 ---
 import '../styles/global.css';
+
+const toastUrl = "#";
+const phoneNumber = "tel:+12102513127"; 
+const locationUrl = "https://www.google.com/maps/place/5328+S+Zarzamora+St,+San+Antonio,+TX+78211/@29.3735368,-98.5340375,17z/data=!4m16!1m9!3m8!1s0x865c59a97f9ce85d:0xcc325e55d056765f!2s5328+S+Zarzamora+St,+San+Antonio,+TX+78211!3b1!8m2!3d29.373569!4d-98.5337972!10e5!16s%2Fg%2F11bw3_h558!3m5!1s0x865c59a97f9ce85d:0xcc325e55d056765f!8m2!3d29.373569!4d-98.5337972!16s%2Fg%2F11bw3_h558?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D";
 ---
 
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu | 210 Sushi Hut</title>
   </head>
-  <body class="bg-[#F2EED0] text-[#0B0B0B] font-sans min-h-screen flex flex-col">
+  <body class="bg-[#F2EED0] text-[#0B0B0B] font-sans flex flex-col min-h-screen">
     
-    <!-- Top Navigation -->
-    <header class="bg-[#0B0B0B] py-5 px-6 sticky top-0 z-50 shadow-lg">
-      <nav class="max-w-4xl mx-auto flex justify-between items-center">
-        <a href="/" class="text-[#F5D85C] uppercase tracking-widest text-xs sm:text-sm font-medium hover:text-white transition-colors">
-          &larr; Back to Home
-        </a>
-        <span class="text-[#F5D85C] uppercase tracking-widest text-xs sm:text-sm font-semibold">Menu</span>
+    <!-- FIXED TOP BAR -->
+    <header class="fixed top-0 left-0 w-full bg-[#0B0B0B] py-4 px-3 sm:py-5 sm:px-6 z-50 shadow-lg">
+      <nav class="max-w-4xl mx-auto flex justify-center items-center gap-3 sm:gap-8 md:gap-12 group">
+        <a href="/" class="whitespace-nowrap text-[#F5D85C] uppercase tracking-wider sm:tracking-widest text-[10px] sm:text-xs md:text-sm font-medium transition-all duration-300 group-hover:scale-75 group-hover:opacity-50 hover:!scale-110 hover:!opacity-100 hover:!text-white">Home</a>
+        <a href={phoneNumber} class="whitespace-nowrap text-[#F5D85C] uppercase tracking-wider sm:tracking-widest text-[10px] sm:text-xs md:text-sm font-medium transition-all duration-300 group-hover:scale-75 group-hover:opacity-50 hover:!scale-110 hover:!opacity-100 hover:!text-white">Call</a>
+        <a href="/#footer" class="whitespace-nowrap text-[#F5D85C] uppercase tracking-wider sm:tracking-widest text-[10px] sm:text-xs md:text-sm font-medium transition-all duration-300 group-hover:scale-75 group-hover:opacity-50 hover:!scale-110 hover:!opacity-100 hover:!text-white">Location & Hours</a>
+        <a href="/#about" class="whitespace-nowrap text-[#F5D85C] uppercase tracking-wider sm:tracking-widest text-[10px] sm:text-xs md:text-sm font-medium transition-all duration-300 group-hover:scale-75 group-hover:opacity-50 hover:!scale-110 hover:!opacity-100 hover:!text-white">About</a>
+        <a href={toastUrl} target="_blank" class="whitespace-nowrap text-[#F5D85C] uppercase tracking-wider sm:tracking-widest text-[10px] sm:text-xs md:text-sm font-medium transition-all duration-300 group-hover:scale-75 group-hover:opacity-50 hover:!scale-110 hover:!opacity-100 hover:!text-white">Order</a>
       </nav>
     </header>
 
-    <!-- Menu Display -->
-    <main class="max-w-3xl mx-auto px-4 py-12 flex flex-col items-center gap-10">
+    <!-- MENU CONTENT -->
+    <main class="max-w-4xl mx-auto px-4 pt-28 pb-20 flex flex-col items-center gap-10 flex-grow w-full">
       <div class="text-center">
         <h1 class="text-3xl md:text-4xl font-light tracking-[0.2em] lowercase mb-2">our menu</h1>
-        <p class="text-xs sm:text-sm text-[#555555]">Tap an image to open and zoom in full resolution.</p>
+        <p class="text-xs sm:text-sm text-[#555555]">Tap an image to open full size and zoom.</p>
       </div>
 
-      <!-- Menu Sheet 1 -->
-      <a href="/menu-1.jpg" target="_blank" class="w-full block border border-[#0B0B0B] shadow-[6px_6px_0px_#0B0B0B] bg-white transition hover:opacity-95">
-        <img src="/menu-1.jpg" alt="210 Sushi Hut Menu Page 1" class="w-full h-auto object-contain" />
+      <!-- Menu Sheet 1 (.jpeg matches your public folder) -->
+      <a href="/menu-1.jpeg" target="_blank" class="w-full max-w-2xl block border border-[#0B0B0B] shadow-[8px_8px_0px_#0B0B0B] bg-white transition hover:opacity-95">
+        <img src="/menu-1.jpeg" alt="210 Sushi Hut Menu Page 1" class="w-full h-auto object-contain" />
       </a>
 
-      <!-- Menu Sheet 2 -->
-      <a href="/menu-2.jpg" target="_blank" class="w-full block border border-[#0B0B0B] shadow-[6px_6px_0px_#0B0B0B] bg-white transition hover:opacity-95">
-        <img src="/menu-2.jpg" alt="210 Sushi Hut Menu Page 2" class="w-full h-auto object-contain" />
+      <!-- Menu Sheet 2 (.jpeg matches your public folder) -->
+      <a href="/menu-2.jpeg" target="_blank" class="w-full max-w-2xl block border border-[#0B0B0B] shadow-[8px_8px_0px_#0B0B0B] bg-white transition hover:opacity-95">
+        <img src="/menu-2.jpeg" alt="210 Sushi Hut Menu Page 2" class="w-full h-auto object-contain" />
       </a>
     </main>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="bg-[#0B0B0B] text-[#F2EED0] py-20 px-6 border-t-[4px] border-[#C89C2E] w-full">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+        
+        <!-- Location -->
+        <div>
+          <h3 class="text-[#F5D85C] uppercase tracking-[0.2em] text-sm mb-4">Location</h3>
+          <p class="text-sm leading-relaxed text-[#F2EED0]/80">
+            5328 S. Zarzamora St<br />
+            San Antonio, TX 78211<br />
+            <a href={locationUrl} target="_blank" class="inline-block mt-2 text-[#C89C2E] hover:text-[#F5D85C] underline transition-colors">Get Directions</a>
+          </p>
+        </div>
+
+        <!-- Hours -->
+        <div>
+          <h3 class="text-[#F5D85C] uppercase tracking-[0.2em] text-sm mb-4">Hours</h3>
+          <ul class="text-sm leading-relaxed text-[#F2EED0]/80 space-y-2">
+            <li><span class="inline-block w-20">Mon-Thu:</span> null</li>
+            <li><span class="inline-block w-20">Fri-Sat:</span> null</li>
+            <li><span class="inline-block w-20">Sunday:</span> null</li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h3 class="text-[#F5D85C] uppercase tracking-[0.2em] text-sm mb-4">Contact</h3>
+          <p class="text-sm leading-relaxed text-[#F2EED0]/80">
+            Ready to order or have a question?<br /><br />
+            <a href={phoneNumber} class="inline-block mt-2 text-[#C89C2E] hover:text-[#F5D85C] underline transition-colors">210-251-3127</a>
+          </p>
+        </div>
+
+      </div>
+    </footer>
 
   </body>
 </html>
