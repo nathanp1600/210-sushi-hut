@@ -2,8 +2,16 @@
 import '../styles/global.css';
 
 const toastUrl = "https://order.toasttab.com/online/210-sushi-hut-115-brady-blvd";
-const phoneNumber = "tel:+12102513127"; 
+const phoneNumber = "tel:+12102513127";
 const locationUrl = "https://www.google.com/maps/place/5328+S+Zarzamora+St,+San+Antonio,+TX+78211/@29.3735368,-98.5340375,17z/data=!4m16!1m9!3m8!1s0x865c59a97f9ce85d:0xcc325e55d056765f!2s5328+S+Zarzamora+St,+San+Antonio,+TX+78211!3b1!8m2!3d29.373569!4d-98.5337972!10e5!16s%2Fg%2F11bw3_h558!3m5!1s0x865c59a97f9ce85d:0xcc325e55d056765f!8m2!3d29.373569!4d-98.5337972!16s%2Fg%2F11bw3_h558?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D";
+
+const featuredItems = [
+  { name: "San Antonio Fusion Roll", image: "/about-image.jpeg" },
+  { name: "Jalapeño Popper Roll", image: "/menu-1.jpeg" },
+  { name: "Spicy Tuna Crisp", image: "/menu-2.jpeg" },
+  { name: "Mexican Street Roll", image: "/about-image.jpeg" },
+  { name: "Dragon Fusion Roll", image: "/menu-1.jpeg" },
+];
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -11,14 +19,11 @@ const locationUrl = "https://www.google.com/maps/place/5328+S+Zarzamora+St,+San+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>210 Sushi Hut | San Antonio</title>
-    <script type="application/ld+json">
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="description" content="210 Sushi Hut serves up a unique Japanese-Mexican sushi fusion in San Antonio, TX. Order online for fresh, family-owned flavor." />
   </head>
   <body class="bg-[#F2EED0] text-[#0B0B0B] font-sans flex flex-col">
 
-  
-    
     <!-- FIXED TOP BAR -->
     <header class="fixed top-0 left-0 w-full bg-[#0B0B0B] py-4 px-3 sm:py-5 sm:px-6 z-50 shadow-lg">
       <nav class="max-w-4xl mx-auto flex justify-center items-center gap-3 sm:gap-8 md:gap-12 group">
@@ -40,15 +45,14 @@ const locationUrl = "https://www.google.com/maps/place/5328+S+Zarzamora+St,+San+
         Order Now
       </a>
     </section>
-
     <!-- SECTION 2: ABOUT US -->
     <section id="about" class="bg-white py-24 px-6">
       <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <!-- Image Container -->
-        <div class="w-full aspect-square bg-[#F2EED0] overflow-hidden border border-[#0B0B0B] shadow-[8px_8px_0px_#0B0B0B]">
+        <div class="w-4/5 sm:w-3/4 mx-auto aspect-square bg-[#F2EED0] overflow-hidden border border-[#0B0B0B] shadow-[8px_8px_0px_#0B0B0B]">
           <img src="/about-image.jpeg" alt="Inside 210 Sushi Hut" class="w-full h-full object-contain" />
         </div>
-        
+
         <!-- Text Container -->
         <div class="flex flex-col justify-center">
           <h2 class="text-[#0B0B0B] text-3xl md:text-4xl font-light tracking-[0.2em] lowercase mb-6">
@@ -67,7 +71,7 @@ const locationUrl = "https://www.google.com/maps/place/5328+S+Zarzamora+St,+San+
     <!-- SECTION 3: FOOTER -->
     <footer id="footer" class="bg-[#0B0B0B] text-[#F2EED0] py-20 px-6 border-t-[4px] border-[#C89C2E]">
       <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
-        
+
         <!-- Location -->
         <div>
           <h3 class="text-[#F5D85C] uppercase tracking-[0.2em] text-sm mb-4">Location</h3>
@@ -97,6 +101,5 @@ const locationUrl = "https://www.google.com/maps/place/5328+S+Zarzamora+St,+San+
 
       </div>
     </footer>
-
   </body>
 </html>

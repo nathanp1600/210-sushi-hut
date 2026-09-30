@@ -1,9 +1,19 @@
 ---
 import '../styles/global.css';
 
-const toastUrl = "#";
-const phoneNumber = "tel:+12102513127"; 
+const toastUrl = "https://order.toasttab.com/online/210-sushi-hut-115-brady-blvd";
+const phoneNumber = "tel:+12102513127";
 const locationUrl = "https://www.google.com/maps/place/5328+S+Zarzamora+St,+San+Antonio,+TX+78211/@29.3735368,-98.5340375,17z/data=!4m16!1m9!3m8!1s0x865c59a97f9ce85d:0xcc325e55d056765f!2s5328+S+Zarzamora+St,+San+Antonio,+TX+78211!3b1!8m2!3d29.373569!4d-98.5337972!10e5!16s%2Fg%2F11bw3_h558!3m5!1s0x865c59a97f9ce85d:0xcc325e55d056765f!8m2!3d29.373569!4d-98.5337972!16s%2Fg%2F11bw3_h558?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D";
+
+const featuredItems = [
+  { name: "lunch special", image: "/lunchspecial.jpeg" },
+  { name: "Jalapeño Popper Roll", image: "/jalapeno1.jpeg" },
+  { name: "Jalapeño Popper Roll", image: "/jalapeno2.jpeg" },
+  { name: "Spicy Tuna roll", image: "/spicytuna.jpeg" },
+  { name: "platters ava", image: "/IMG_4254.JPEG" },
+  { name: "Sushi tray", image: "/sushitray.jpeg" },
+
+];
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -14,7 +24,7 @@ const locationUrl = "https://www.google.com/maps/place/5328+S+Zarzamora+St,+San+
     <title>Menu | 210 Sushi Hut</title>
   </head>
   <body class="bg-[#F2EED0] text-[#0B0B0B] font-sans flex flex-col min-h-screen">
-    
+
     <!-- FIXED TOP BAR -->
     <header class="fixed top-0 left-0 w-full bg-[#0B0B0B] py-4 px-3 sm:py-5 sm:px-6 z-50 shadow-lg">
       <nav class="max-w-4xl mx-auto flex justify-center items-center gap-3 sm:gap-8 md:gap-12 group">
@@ -27,25 +37,44 @@ const locationUrl = "https://www.google.com/maps/place/5328+S+Zarzamora+St,+San+
     </header>
 
     <!-- MENU CONTENT -->
-    <main class="max-w-4xl mx-auto px-4 pt-28 pb-20 flex flex-col items-center gap-10 flex-grow w-full">
+    <main class="max-w-5xl mx-auto px-4 pt-28 pb-20 flex flex-col items-center gap-10 flex-grow w-full">
+
+      <!-- Menu Header -->
       <div class="text-center">
         <h1 class="text-3xl md:text-4xl font-light tracking-[0.2em] lowercase mb-2">our menu</h1>
         <p class="text-xs sm:text-sm text-[#555555]">Tap to enlarge</p>
       </div>
 
-      <!-- Menu Sheet 1 (.jpeg matches your public folder) -->
+      <!-- Menu Sheet 1 -->
       <a href="/menu-1.jpeg" target="_blank" class="w-full max-w-2xl block border border-[#0B0B0B] shadow-[8px_8px_0px_#0B0B0B] bg-white transition hover:opacity-95">
         <img src="/menu-1.jpeg" alt="210 Sushi Hut Menu Page 1" class="w-full h-auto object-contain" />
       </a>
 
-      <!-- Menu Sheet 2 (.jpeg matches your public folder) -->
+      <!-- Menu Sheet 2 -->
       <a href="/menu-2.jpeg" target="_blank" class="w-full max-w-2xl block border border-[#0B0B0B] shadow-[8px_8px_0px_#0B0B0B] bg-white transition hover:opacity-95">
         <img src="/menu-2.jpeg" alt="210 Sushi Hut Menu Page 2" class="w-full h-auto object-contain" />
       </a>
+
+      <!-- FEATURED FOOD GALLERY SEPARATOR -->
+      <div class="w-full max-w-2xl mt-8 pt-16 border-t border-[#0B0B0B]/20 text-center">
+        <h2 class="text-3xl md:text-4xl font-light tracking-[0.2em] lowercase mb-2">featured dishes</h2>
+        <p class="text-xs sm:text-sm text-[#555555]">Tap to enlarge</p>
+      </div>
+
+      <!-- Stacked Food Photos (Matching Menu Style) -->
+      {featuredItems.map((item) => (
+        <div class="w-full flex flex-col items-center gap-4">
+          <h3 class="text-[#0B0B0B] text-xl font-light tracking-[0.1em] lowercase">{item.name}</h3>
+          <a href={item.image} target="_blank" class="w-full max-w-2xl block border border-[#0B0B0B] shadow-[8px_8px_0px_#0B0B0B] bg-white transition hover:opacity-95">
+            <img src={item.image} alt={item.name} class="w-full h-auto object-contain" loading="lazy" />
+          </a>
+        </div>
+      ))}
+
     </main>
 
     <!-- FOOTER -->
-    <footer id="footer" class="bg-[#0B0B0B] text-[#F2EED0] py-20 px-6 border-t-[4px] border-[#C89C2E] w-full">
+    <footer id="footer" class="bg-[#0B0B0B] text-[#F2EED0] py-20 px-6 border-t-[4px] border-[#C89C2E] w-full mt-auto">
       <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
         
         <!-- Location -->
