@@ -7,12 +7,15 @@ const locationUrl = "https://www.google.com/maps/place/5328+S+Zarzamora+St,+San+
 
 const featuredItems = [
   { name: "lunch special", image: "/lunchspecial.jpeg" },
+    { name: " ", image: "/firevid.mov" },
   { name: "Jalapeño Popper Roll", image: "/jalapeno1.jpeg" },
   { name: "Jalapeño Popper Roll", image: "/jalapeno2.jpeg" },
   { name: "Spicy Tuna roll", image: "/spicytuna.jpeg" },
   { name: "platters ava", image: "/IMG_4254.JPEG" },
   { name: "Sushi tray", image: "/sushitray.jpeg" },
-
+    { name: " ", image: "/fire.jpeg" },
+  // Just add your video here like this: { name: "Video Roll", image: "/your-video.mov" }
+  // { name: " ", image: "/firevid.mov" }
 ];
 ---
 
@@ -66,7 +69,12 @@ const featuredItems = [
         <div class="w-full flex flex-col items-center gap-4">
           <h3 class="text-[#0B0B0B] text-xl font-light tracking-[0.1em] lowercase">{item.name}</h3>
           <a href={item.image} target="_blank" class="w-full max-w-2xl block border border-[#0B0B0B] shadow-[8px_8px_0px_#0B0B0B] bg-white transition hover:opacity-95">
-            <img src={item.image} alt={item.name} class="w-full h-auto object-contain" loading="lazy" />
+            {/* Added check: If it's a video file, use <video>, otherwise use <img> */}
+            {item.image.toLowerCase().endsWith('.mov') || item.image.toLowerCase().endsWith('.mp4') ? (
+              <video src={item.image} autoplay muted loop playsinline class="w-full h-auto object-contain pointer-events-none"></video>
+            ) : (
+              <img src={item.image} alt={item.name} class="w-full h-auto object-contain" loading="lazy" />
+            )}
           </a>
         </div>
       ))}
