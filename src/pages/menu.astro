@@ -7,7 +7,7 @@ const locationUrl = "https://www.google.com/maps/place/5328+S+Zarzamora+St,+San+
 
 const featuredItems = [
   { name: "lunch special", image: "/lunchspecial.jpeg" },
-    { name: " ", image: "/firevid.mov" },
+{ name: "Video Roll", image: "/firevid.mp4" },
   { name: "Jalapeño Popper Roll", image: "/jalapeno1.jpeg" },
   { name: "Jalapeño Popper Roll", image: "/jalapeno2.jpeg" },
   { name: "Spicy Tuna roll", image: "/spicytuna.jpeg" },
@@ -50,12 +50,12 @@ const featuredItems = [
 
       <!-- Menu Sheet 1 -->
       <a href="/menu-1.jpeg" target="_blank" class="w-full max-w-2xl block border border-[#0B0B0B] shadow-[8px_8px_0px_#0B0B0B] bg-white transition hover:opacity-95">
-        <img src="/menu-1.jpeg" alt="210 Sushi Hut Menu Page 1" class="w-full h-auto object-contain" />
+        <img src="/menu-1.jpeg" alt="210 Sushi Hut Menu Page 1" width="800" height="1035" class="w-full h-auto object-contain" />
       </a>
 
       <!-- Menu Sheet 2 -->
       <a href="/menu-2.jpeg" target="_blank" class="w-full max-w-2xl block border border-[#0B0B0B] shadow-[8px_8px_0px_#0B0B0B] bg-white transition hover:opacity-95">
-        <img src="/menu-2.jpeg" alt="210 Sushi Hut Menu Page 2" class="w-full h-auto object-contain" />
+        <img src="/menu-2.jpeg" alt="210 Sushi Hut Menu Page 2" width="800" height="1035" class="w-full h-auto object-contain" />
       </a>
 
       <!-- FEATURED FOOD GALLERY SEPARATOR -->
@@ -65,20 +65,35 @@ const featuredItems = [
       </div>
 
       <!-- Stacked Food Photos (Matching Menu Style) -->
+<!-- Stacked Food Photos & Videos -->
       {featuredItems.map((item) => (
         <div class="w-full flex flex-col items-center gap-4">
           <h3 class="text-[#0B0B0B] text-xl font-light tracking-[0.1em] lowercase">{item.name}</h3>
-          <a href={item.image} target="_blank" class="w-full max-w-2xl block border border-[#0B0B0B] shadow-[8px_8px_0px_#0B0B0B] bg-white transition hover:opacity-95">
-            {/* Added check: If it's a video file, use <video>, otherwise use <img> */}
-            {item.image.toLowerCase().endsWith('.mov') || item.image.toLowerCase().endsWith('.mp4') ? (
-              <video src={item.image} autoplay muted loop playsinline class="w-full h-auto object-contain pointer-events-none"></video>
-            ) : (
-              <img src={item.image} alt={item.name} class="w-full h-auto object-contain" loading="lazy" />
-            )}
-          </a>
+          
+          {item.image.toLowerCase().endsWith('.mov') || item.image.toLowerCase().endsWith('.mp4') ? (
+            /* VIDEO: Plays inline, no clickable link */
+            <div class="w-full max-w-2xl block border border-[#0B0B0B] shadow-[8px_8px_0px_#0B0B0B] bg-white">
+              <video 
+                src={item.image} 
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                webkit-playsinline
+                preload="auto"
+                width="800" 
+                height="600" 
+                class="w-full h-auto object-contain"
+              ></video>
+            </div>
+          ) : (
+            /* IMAGE: Clickable to enlarge in a new tab */
+            <a href={item.image} target="_blank" class="w-full max-w-2xl block border border-[#0B0B0B] shadow-[8px_8px_0px_#0B0B0B] bg-white transition hover:opacity-95 cursor-zoom-in">
+              <img src={item.image} alt={item.name} width="800" height="600" class="w-full h-auto object-contain" loading="lazy" />
+            </a>
+          )}
         </div>
       ))}
-
     </main>
 
     <!-- FOOTER -->
